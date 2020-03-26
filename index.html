@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Player</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Enter Players Name</h1>
+
+    <div class="pname">
+      <p>Player 1</p>
+      <input type="text" class="name" id="p1" required />
+    </div>
+
+    <div class="pname">
+      <p>Player 2</p>
+      <input type="text" class="name" id="p2" required/>
+    </div>
+
+  </div>
+
+  <div class="btn">
+    <button type="button" name="button" onclick="getInputValues()"><a href="dicee.html">Let's Start!!</a></button>
+  </div>
+  <script>
+     function getInputValues(){
+       var player1 = document.getElementById("p1").value;
+       var player2 = document.getElementById("p2").value;
+       localStorage.setItem("splayer1", player1);
+       localStorage.setItem("splayer2", player2);
+       if((!player1) || (!player2)){
+         alert("Please Enter the Names");
+         document.querySelector("a").setAttribute("href", "index.html");
+       }
+     }
+  </script>
+</body>
+
+</html>
